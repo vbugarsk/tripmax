@@ -1,4 +1,6 @@
 $ cat .gitignore
 
 .DS_Store
+.gitignore
 protected/config/main.php
+protected/runtime/application.log

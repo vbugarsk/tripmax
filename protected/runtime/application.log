@@ -581,3 +581,20 @@ Stack trace:
 REQUEST_URI=/tripmax/index.php/trip/admin
 HTTP_REFERER=http://localhost/tripmax/index.php/trip/index
 ---
+2012/05/02 21:03:25 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/admin')
+#9 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\web\tripmax\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tripmax/index.php/trip/admin
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/index
+---

@@ -1,0 +1,2 @@
+2012/05/02 17:38:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vbugarsk_tripmax.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
+in Z:\web\tripmax\index.php (13)

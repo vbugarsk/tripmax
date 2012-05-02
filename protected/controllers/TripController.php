@@ -68,6 +68,9 @@ class TripController extends Controller
 
 		if(isset($_POST['Trip']))
 		{
+			// Automatically insert current userId
+			$model->userId = Yii::app()->user->id; 
+			
 			$model->attributes=$_POST['Trip'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
@@ -155,7 +158,15 @@ class TripController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		$model=Trip::model()->findByPk($id);
+		// Guests can only see public trips
+		// Authenticated users can see public and their own private trips
+		
+		if(Yii::app()->user->isGuest)
+			$condition='private=0';
+		else
+			$condition='private=0 OR (private=1 AND userId='.Yii::app()->user->getId().')';
+		
+		$model=Trip::model()->findByPk($id, $condition);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

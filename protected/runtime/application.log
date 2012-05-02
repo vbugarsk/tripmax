@@ -268,3 +268,316 @@ Stack trace:
 REQUEST_URI=/tripmax/index.php/trip/admin
 HTTP_REFERER=http://localhost/tripmax/index.php/trip/index
 ---
+2012/05/02 20:27:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "route".' in Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('route')
+#1 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\web\tripmax\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/tripmax/index.php/route
+---
+2012/05/02 20:28:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "tri".' in Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('tri')
+#1 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\web\tripmax\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/tripmax/index.php/tri
+---
+2012/05/02 20:31:05 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `tbl_trip` `t` WHERE `t`.`id`='3' AND (private=0 OR (private=1 AND userId=2) LIMIT 1.
+in Z:\web\tripmax\protected\controllers\TripController.php (169)
+in Z:\web\tripmax\protected\controllers\TripController.php (54)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 20:31:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'LIMIT 1' at line 1. The SQL statement executed was: SELECT * FROM `tbl_trip` `t` WHERE `t`.`id`='3' AND (private=0 OR (private=1 AND userId=2) LIMIT 1' in Z:\yii-1.1.10.r3566\framework\db\CDbCommand.php:528
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\db\CDbCommand.php(408): CDbCommand->queryInternal('fetch', Array, Array)
+#1 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryRow()
+#2 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(1422): CActiveRecord->query(Object(CDbCriteria))
+#3 Z:\web\tripmax\protected\controllers\TripController.php(169): CActiveRecord->findByPk('3', 'private=0 OR (p...')
+#4 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('3')
+#5 [internal function]: TripController->actionView('3')
+#6 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#8 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#15 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#17 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#18 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 Z:\web\tripmax\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tripmax/index.php/trip/3
+HTTP_REFERER=http://localhost/tripmax/index.php/trip
+---
+2012/05/02 20:32:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('3')
+#1 [internal function]: TripController->actionView('3')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/3
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/update/3
+---
+2012/05/02 20:32:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('3')
+#1 [internal function]: TripController->actionView('3')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/3
+HTTP_REFERER=http://localhost/tripmax/index.php/trip
+---
+2012/05/02 20:32:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('3')
+#1 [internal function]: TripController->actionView('3')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/3
+HTTP_REFERER=http://localhost/tripmax/index.php/trip
+---
+2012/05/02 20:33:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('4')
+#1 [internal function]: TripController->actionView('4')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/4
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/update/4
+---
+2012/05/02 20:33:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(91): TripController->loadModel('4')
+#1 [internal function]: TripController->actionUpdate('4')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('update')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/update')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/update/4
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/4
+---
+2012/05/02 20:33:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('4')
+#1 [internal function]: TripController->actionView('4')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/4
+HTTP_REFERER=http://localhost/tripmax/index.php/trip
+---
+2012/05/02 20:33:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('3')
+#1 [internal function]: TripController->actionView('3')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/3
+HTTP_REFERER=http://localhost/tripmax/index.php/trip
+---
+2012/05/02 20:34:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('4')
+#1 [internal function]: TripController->actionView('4')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/4
+HTTP_REFERER=http://localhost/tripmax/index.php/trip
+---
+2012/05/02 20:35:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('5')
+#1 [internal function]: TripController->actionView('5')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/5
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/index
+---
+2012/05/02 20:35:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "route".' in Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('route')
+#1 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\web\tripmax\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/tripmax/index.php/route
+---
+2012/05/02 20:36:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('5')
+#1 [internal function]: TripController->actionView('5')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/5
+HTTP_REFERER=http://localhost/tripmax/index.php/trip
+---
+2012/05/02 20:36:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The requested page does not exist.' in Z:\web\tripmax\protected\controllers\TripController.php:171
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(54): TripController->loadModel('3')
+#1 [internal function]: TripController->actionView('3')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('view')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/view')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/3
+HTTP_REFERER=http://localhost/tripmax/index.php/trip
+---
+2012/05/02 20:37:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/admin')
+#9 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\web\tripmax\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tripmax/index.php/trip/admin
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/index
+---

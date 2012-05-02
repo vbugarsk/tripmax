@@ -97,4 +97,9 @@ class User extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+	
+	public function validatePassword($password)
+	{
+		return md5($password)===$this->password;
+	}
 }

@@ -1,2 +1,270 @@
 2012/05/02 17:38:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'vbugarsk_tripmax.user' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `user`.
 in Z:\web\tripmax\index.php (13)
+2012/05/02 17:55:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "route".' in Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('route')
+#1 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\web\tripmax\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/tripmax/index.php/route
+---
+2012/05/02 18:10:26 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`vbugarsk_tripmax`.`tbl_trip`, CONSTRAINT `tbl_trip_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `tbl_user` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `tbl_trip` (`private`, `userId`, `title`, `description`, `start`, `finish`, `created`, `modified`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7).
+in Z:\web\tripmax\protected\controllers\TripController.php (75)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 18:10:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`vbugarsk_tripmax`.`tbl_trip`, CONSTRAINT `tbl_trip_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `tbl_user` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `tbl_trip` (`private`, `userId`, `title`, `description`, `start`, `finish`, `created`, `modified`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7)' in Z:\yii-1.1.10.r3566\framework\db\CDbCommand.php:354
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 Z:\web\tripmax\protected\controllers\TripController.php(75): CActiveRecord->save()
+#3 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(50): TripController->actionCreate()
+#4 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#6 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#7 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('create')
+#13 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/create')
+#14 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 Z:\web\tripmax\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/tripmax/index.php/trip/create
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/create
+---
+2012/05/02 18:50:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "route/update".' in Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('route/update')
+#1 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\web\tripmax\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/tripmax/index.php/route/update/1
+---
+2012/05/02 19:21:50 [warning] [application] Failed to set unsafe attribute "userId" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (71)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:21:50 [warning] [application] Failed to set unsafe attribute "created" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (71)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:21:50 [warning] [application] Failed to set unsafe attribute "modified" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (71)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:22:35 [warning] [application] Failed to set unsafe attribute "userId" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:22:35 [warning] [application] Failed to set unsafe attribute "created" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:22:35 [warning] [application] Failed to set unsafe attribute "modified" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:22:35 [error] [exception.CException] exception 'CException' with message 'Property "Trip.updated" is not defined.' in Z:\yii-1.1.10.r3566\framework\base\CComponent.php:174
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(160): CComponent->__set('updated', 1335986555)
+#1 Z:\web\tripmax\protected\models\Trip.php(83): CActiveRecord->__set('updated', 1335986555)
+#2 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(1056): Trip->beforeSave()
+#3 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#4 Z:\web\tripmax\protected\controllers\TripController.php(96): CActiveRecord->save()
+#5 [internal function]: TripController->actionUpdate('2')
+#6 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#8 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#15 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('update')
+#17 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/update')
+#18 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 Z:\web\tripmax\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tripmax/index.php/trip/update/2
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/update/2
+---
+2012/05/02 19:22:48 [warning] [application] Failed to set unsafe attribute "userId" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:22:48 [warning] [application] Failed to set unsafe attribute "created" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:22:48 [warning] [application] Failed to set unsafe attribute "modified" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:22:48 [error] [exception.CException] exception 'CException' with message 'Property "Trip.updated" is not defined.' in Z:\yii-1.1.10.r3566\framework\base\CComponent.php:174
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(160): CComponent->__set('updated', 1335986568)
+#1 Z:\web\tripmax\protected\models\Trip.php(83): CActiveRecord->__set('updated', 1335986568)
+#2 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(1056): Trip->beforeSave()
+#3 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#4 Z:\web\tripmax\protected\controllers\TripController.php(96): CActiveRecord->save()
+#5 [internal function]: TripController->actionUpdate('2')
+#6 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#8 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#15 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('update')
+#17 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/update')
+#18 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 Z:\web\tripmax\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tripmax/index.php/trip/update/2
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/update/2
+---
+2012/05/02 19:23:40 [warning] [application] Failed to set unsafe attribute "userId" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:23:40 [warning] [application] Failed to set unsafe attribute "created" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:23:40 [warning] [application] Failed to set unsafe attribute "modified" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:23:40 [error] [exception.CException] exception 'CException' with message 'Property "Trip.updated" is not defined.' in Z:\yii-1.1.10.r3566\framework\base\CComponent.php:174
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(160): CComponent->__set('updated', 1335986620)
+#1 Z:\web\tripmax\protected\models\Trip.php(83): CActiveRecord->__set('updated', 1335986620)
+#2 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(1056): Trip->beforeSave()
+#3 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#4 Z:\web\tripmax\protected\controllers\TripController.php(96): CActiveRecord->save()
+#5 [internal function]: TripController->actionUpdate('2')
+#6 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#8 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#15 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('update')
+#17 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/update')
+#18 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 Z:\web\tripmax\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tripmax/index.php/trip/update/2
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/update/2
+---
+2012/05/02 19:24:35 [warning] [application] Failed to set unsafe attribute "userId" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:24:35 [warning] [application] Failed to set unsafe attribute "created" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:24:35 [warning] [application] Failed to set unsafe attribute "modified" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:24:35 [error] [exception.CException] exception 'CException' with message 'Property "Trip.updated" is not defined.' in Z:\yii-1.1.10.r3566\framework\base\CComponent.php:174
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(160): CComponent->__set('updated', 1335986675)
+#1 Z:\web\tripmax\protected\models\Trip.php(83): CActiveRecord->__set('updated', 1335986675)
+#2 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(1056): Trip->beforeSave()
+#3 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(787): CActiveRecord->update(NULL)
+#4 Z:\web\tripmax\protected\controllers\TripController.php(96): CActiveRecord->save()
+#5 [internal function]: TripController->actionUpdate('2')
+#6 Z:\yii-1.1.10.r3566\framework\web\actions\CAction.php(107): ReflectionMethod->invokeArgs(Object(TripController), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(48): CAction->runWithParamsInternal(Object(TripController), Object(ReflectionMethod), Array)
+#8 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#9 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#10 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#11 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#12 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#13 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#15 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('update')
+#17 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/update')
+#18 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 Z:\web\tripmax\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/tripmax/index.php/trip/update/2
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/update/2
+---
+2012/05/02 19:25:19 [warning] [application] Failed to set unsafe attribute "userId" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:25:19 [warning] [application] Failed to set unsafe attribute "created" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:25:19 [warning] [application] Failed to set unsafe attribute "modified" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:25:35 [warning] [application] Failed to set unsafe attribute "userId" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:25:35 [warning] [application] Failed to set unsafe attribute "created" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:25:35 [warning] [application] Failed to set unsafe attribute "modified" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:25:43 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/admin')
+#9 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\web\tripmax\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tripmax/index.php/trip/admin
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/index
+---
+2012/05/02 19:26:38 [warning] [application] Failed to set unsafe attribute "userId" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:26:38 [warning] [application] Failed to set unsafe attribute "created" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:26:38 [warning] [application] Failed to set unsafe attribute "modified" of "Trip".
+in Z:\web\tripmax\protected\controllers\TripController.php (95)
+in Z:\web\tripmax\index.php (13)
+2012/05/02 19:44:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('delete')
+#8 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/delete')
+#9 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\web\tripmax\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tripmax/index.php/trip/delete/2
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/2
+---
+2012/05/02 19:53:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/admin')
+#9 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\web\tripmax\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tripmax/index.php/trip/admin
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/index
+---

@@ -46,9 +46,8 @@ class Trip extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('userId, title, start, finish, created, modified', 'required'),
+			array('title, start, finish', 'required'),
 			array('private', 'numerical', 'integerOnly'=>true),
-			array('userId', 'length', 'max'=>10),
 			array('title', 'length', 'max'=>128),
 			array('description', 'safe'),
 			// The following rule is used by search().
@@ -67,7 +66,33 @@ class Trip extends CActiveRecord
 		return array(
 			'trackpoints' => array(self::HAS_MANY, 'Trackpoint', 'tripId'),
 			'user' => array(self::BELONGS_TO, 'User', 'userId'),
+			'trackpointCount' => array(self::STAT, 'Trackpoint', 'tripId'),
 		);
+	}
+	
+	public function getUrl()
+	{
+		return Yii::app()->createUrl('trip/view', array(
+			'id'=>$this->id,
+			'title'=>$this->title,
+		));
+	}
+
+	protected function beforeSave()
+	{
+		if(parent::beforeSave())
+		{
+			if($this->isNewRecord)
+			{
+				$this->created = $this->modified = new CDbExpression('NOW()');
+				$this->userId=Yii::app()->user->id;
+			}
+			else
+				$this->modified = new CDbExpression('NOW()');
+			return true;
+		}
+		else
+			return false;
 	}
 
 	/**

@@ -133,6 +133,9 @@ class TripController extends Controller
 			'with'=>'trackpointCount',
 		));
 		
+		if(isset($_GET['author']))
+			$criteria->addSearchCondition('authors',$_GET['author']);
+		
 		$dataProvider=new CActiveDataProvider('Trip', array(
 			'pagination'=>array(
 				'pageSize'=>2,

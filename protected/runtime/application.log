@@ -958,3 +958,90 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/tripmax/index.php/trip/1
 ---
+2012/05/03 11:20:03 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('admin')
+#8 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/admin')
+#9 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\web\tripmax\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tripmax/index.php/trip/admin
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/index
+---
+2012/05/03 16:47:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "trackpoint".' in Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trackpoint')
+#1 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\web\tripmax\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/tripmax/index.php/trackpoint
+---
+2012/05/03 16:51:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "trackpoint".' in Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php:280
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trackpoint')
+#1 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 Z:\web\tripmax\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/tripmax/index.php/trackpoint
+---
+2012/05/03 17:03:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php:157
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\auth\CAccessControlFilter.php(120): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(39): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#3 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#4 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#5 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('loadGPX')
+#8 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/loadGPX')
+#9 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\web\tripmax\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/tripmax/index.php/trip/loadGPX
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/update?id=3
+---
+2012/05/03 17:05:37 [error] [exception.CException] exception 'CException' with message 'TripController and its behaviors do not have a method or closure named "loadGPX".' in Z:\yii-1.1.10.r3566\framework\base\CComponent.php:266
+Stack trace:
+#0 Z:\web\tripmax\protected\controllers\TripController.php(207): CComponent->__call('loadGPX', Array)
+#1 Z:\web\tripmax\protected\controllers\TripController.php(207): TripController->loadGPX('TRKFile.gpx')
+#2 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(50): TripController->actionLoadGPX()
+#3 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#5 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#6 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#7 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#8 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#10 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('loadGPX')
+#12 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip/loadGPX')
+#13 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 Z:\web\tripmax\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/tripmax/index.php/trip/loadGPX
+HTTP_REFERER=http://localhost/tripmax/index.php/trip/update?id=3
+---
+2012/05/03 17:07:23 [error] [php] Undefined variable: id (Z:\web\tripmax\protected\controllers\TripController.php:207)
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): TripController->runAction()
+#1 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#2 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CAccessControlFilter->filter()
+#3 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): TripController->filterAccessControl()
+#4 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#6 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): TripController->runActionWithFilters()
+#7 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): TripController->run()
+#8 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 Z:\web\tripmax\index.php(13): CWebApplication->run()
+REQUEST_URI=/tripmax/index.php/trip/loadGPX
+in Z:\web\tripmax\protected\controllers\TripController.php (207)
+in Z:\web\tripmax\index.php (13)

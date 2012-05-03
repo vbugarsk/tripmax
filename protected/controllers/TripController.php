@@ -31,7 +31,7 @@ class TripController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','loadGPX'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -200,5 +200,13 @@ class TripController extends Controller
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
+	}
+	
+	public function actionLoadGPX($id)
+	{
+		$model=$this->loadModel($id);
+		$model->loadGPX('TRKFile.gpx');
+		$this->redirect(array('view','id'=>$id));
+
 	}
 }

@@ -95,11 +95,6 @@ class Trip extends CActiveRecord
 			return false;
 	}
 	
-	public function trackPoints()
-	{
-		return $this->trackpointsCount;
-	}
-
 	/**
 	 * @return array customized attribute labels (name=>label)
 	 */
@@ -143,4 +138,41 @@ class Trip extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+	/**
+	 * Load points from GPX file
+	 */
+	public function loadGPX($fileName)
+	{
+		$doc = new DOMDocument();
+		$doc->load($fileName);
+
+		/* TRACK POINTS */
+
+		$trks = $doc->getElementsByTagName('trk');
+		foreach($trks as $trk)
+		{
+			$name = $trk->getElementsByTagName('name')->item(0)->nodeValue;
+
+			$trkpts = $trk->getElementsByTagName('trkpt');
+			foreach($trkpts as $trkpt)
+			{
+				$lat  = $trkpt->getAttribute('lat');
+				$lon  = $trkpt->getAttribute('lon');
+				$ele  = $trkpt->getElementsByTagName('ele')->item(0)->nodeValue;
+				$time = $trkpt->getElementsByTagName('time')->item(0)->nodeValue;
+
+				$point = new Trackpoint();
+				
+				$point->tripId = $this->id;
+				$point->latitude = $lat;
+				$point->longitude = $lon;
+				$point->elevation = $ele;
+				$point->time = $time;
+				
+				$point->save();
+			}
+		}
+	}
 }
+?>

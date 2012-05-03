@@ -26,7 +26,7 @@ $this->menu=array(
 		'start',
 		'finish',
 		'trackpointCount',
-		'distance',
+		'distanceWithUnit',
 		'created',
 		'modified',
 	),

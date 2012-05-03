@@ -64,7 +64,7 @@ class Trip extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'trackpoints' => array(self::HAS_MANY, 'Trackpoint', 'tripId'),
+			'trackpoints' => array(self::HAS_MANY, 'Trackpoint', 'tripId', 'order'=>'trackpoints.time ASC'),
 			'user' => array(self::BELONGS_TO, 'User', 'userId'),
 			'trackpointCount' => array(self::STAT, 'Trackpoint', 'tripId'),
 		);
@@ -110,6 +110,7 @@ class Trip extends CActiveRecord
 			'finish' => 'Finish',
 			'created' => 'Created',
 			'modified' => 'Modified',
+			'distanceWithUnit' => 'Distance',
 		);
 	}
 
@@ -174,8 +175,31 @@ class Trip extends CActiveRecord
 			}
 		}
 	}
+	
+	public function deleteGPX()
+	{
+		$criteria = new CDbCriteria(array(
+			'condition' => 'tripId=:parentId',
+                'params' => array(
+                    ':parentId' => $this->id),
+            ));
 
-	private $earthRadius  = 3960.00;
+        $points = Trackpoint::model()->findAll($criteria);
+
+        foreach ($points as $point)
+        {
+            $point->delete();
+        }
+	}
+
+	public function getDistanceWithUnit()
+	{
+		$distance = $this->distance;
+		if($distance > 0) 
+			return round($this->distance, 2) . ' ' . $this->user->units;
+		else
+			return null;
+	}
 	
 	public function getDistance()
 	{
@@ -188,24 +212,34 @@ class Trip extends CActiveRecord
 		{
 			$p1 = $this->trackpoints[$i-1];
 			$p2 = $this->trackpoints[$i];
-			$haverDist = $this->distanceHaversine($p1->latitude, $p1->longitude, $p2->latitude, $p2->longitude);
+			$haverDist = $this->distanceHaversine($p1, $p2);
 			$totalDist = $totalDist + $haverDist;
-		}	
-		return $totalDist;
+		}
+
+		$units = $this->user->units;
+		
+		if ($units == "km")
+			return $totalDist * 1.609344; 
+		else if ($units == "nm")
+			return $totalDist * 0.8684;
+		else if ($units == "mi")
+			return $totalDist;
+		else
+			return null;
 	}
 
-	function distanceHaversine($lat1, $lon1, $lat2, $lon2)
+	// Return distance between two points in miles
+	function distanceHaversine($p1, $p2)
 	{
-		$delta_lat = $lat2 - $lat1 ;
-		$delta_lon = $lon2 - $lon1 ;
-		$alpha     = $delta_lat/2 ;
-		$beta      = $delta_lon/2 ;
- 
-		$a        = sin(deg2rad($alpha)) * sin(deg2rad($alpha)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * sin(deg2rad($beta)) * sin(deg2rad($beta)) ;
-		$c        = asin(min(1, sqrt($a)));
-		$distance = 2*$this->earthRadius * $c;
-		$distance = round($distance, 4);
-
-		return $distance;
+		$lat1 = $p1->latitude;
+		$lon1 = $p1->longitude;
+		$lat2 = $p2->latitude;
+		$lon2 = $p2->longitude;
+	
+		$theta = $lon1 - $lon2; 
+		$dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) +  cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta)); 
+		$dist = acos($dist); 
+		$dist = rad2deg($dist); 
+		return $dist * 60 * 1.1515;
 	}
 }

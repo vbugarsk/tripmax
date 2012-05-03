@@ -31,7 +31,7 @@ class TripController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','loadGPX'),
+				'actions'=>array('create','update','loadGPX','deleteGPX'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -187,7 +187,7 @@ class TripController extends Controller
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
-	}
+	}	
 
 	/**
 	 * Performs the AJAX validation.
@@ -206,6 +206,13 @@ class TripController extends Controller
 	{
 		$model=$this->loadModel($id);
 		$model->loadGPX('TRKFile.gpx');
+		$this->redirect(array('view','id'=>$id));
+	}
+	
+	public function actionDeleteGPX($id)
+	{
+		$model=$this->loadModel($id);
+		$model->deleteGPX();
 		$this->redirect(array('view','id'=>$id));
 	}
 }

@@ -11,6 +11,7 @@ $this->menu=array(
 	array('label'=>'View Trip', 'url'=>array('view', 'id'=>$model->id)),
 	array('label'=>'Manage Trip', 'url'=>array('admin')),
 	array('label'=>'Upload Tracks', 'url'=>array('loadGPX', 'id'=>$model->id)),
+	array('label'=>'Delete Tracks', 'url'=>array('deleteGPX', 'id'=>$model->id)),
 );
 ?>
 

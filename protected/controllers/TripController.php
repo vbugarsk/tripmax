@@ -207,6 +207,5 @@ class TripController extends Controller
 		$model=$this->loadModel($id);
 		$model->loadGPX('TRKFile.gpx');
 		$this->redirect(array('view','id'=>$id));
-
 	}
 }

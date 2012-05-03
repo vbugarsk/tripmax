@@ -25,6 +25,8 @@ $this->menu=array(
 		'private',
 		'start',
 		'finish',
+		'trackpointCount',
+		'distance',
 		'created',
 		'modified',
 	),

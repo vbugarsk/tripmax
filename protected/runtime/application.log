@@ -598,3 +598,43 @@ Stack trace:
 REQUEST_URI=/tripmax/index.php/trip/admin
 HTTP_REFERER=http://localhost/tripmax/index.php/trip/index
 ---
+2012/05/03 00:58:38 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION vbugarsk_tripmax.showCondition does not exist. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `tbl_trip` `t`  WHERE (showCondition()).
+in Z:\web\tripmax\protected\views\trip\index.php (17)
+in Z:\web\tripmax\protected\controllers\TripController.php (145)
+in Z:\web\tripmax\index.php (13)
+2012/05/03 00:58:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1305 FUNCTION vbugarsk_tripmax.showCondition does not exist. The SQL statement executed was: SELECT COUNT(DISTINCT `t`.`id`) FROM `tbl_trip` `t`  WHERE (showCondition())' in Z:\yii-1.1.10.r3566\framework\db\CDbCommand.php:528
+Stack trace:
+#0 Z:\yii-1.1.10.r3566\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveFinder.php(762): CDbCommand->queryScalar()
+#2 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveFinder.php(155): CJoinElement->count(Object(CDbCriteria))
+#3 Z:\yii-1.1.10.r3566\framework\db\ar\CActiveRecord.php(1540): CActiveFinder->count(Object(CDbCriteria))
+#4 Z:\yii-1.1.10.r3566\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#5 Z:\yii-1.1.10.r3566\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#6 Z:\yii-1.1.10.r3566\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#7 Z:\yii-1.1.10.r3566\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#8 Z:\yii-1.1.10.r3566\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#9 Z:\yii-1.1.10.r3566\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#10 Z:\yii-1.1.10.r3566\framework\web\CBaseController.php(148): CListView->init()
+#11 Z:\yii-1.1.10.r3566\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#12 Z:\web\tripmax\protected\views\trip\index.php(17): CBaseController->widget('zii.widgets.CLi...', Array)
+#13 Z:\yii-1.1.10.r3566\framework\web\CBaseController.php(127): require('Z:\web\tripmax\...')
+#14 Z:\yii-1.1.10.r3566\framework\web\CBaseController.php(96): CBaseController->renderInternal('Z:\web\tripmax\...', Array, true)
+#15 Z:\yii-1.1.10.r3566\framework\web\CController.php(870): CBaseController->renderFile('Z:\web\tripmax\...', Array, true)
+#16 Z:\yii-1.1.10.r3566\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#17 Z:\web\tripmax\protected\controllers\TripController.php(145): CController->render('index', Array)
+#18 Z:\yii-1.1.10.r3566\framework\web\actions\CInlineAction.php(50): TripController->actionIndex()
+#19 Z:\yii-1.1.10.r3566\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#20 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#21 Z:\yii-1.1.10.r3566\framework\web\filters\CFilter.php(41): CFilterChain->run()
+#22 Z:\yii-1.1.10.r3566\framework\web\CController.php(1146): CFilter->filter(Object(CFilterChain))
+#23 Z:\yii-1.1.10.r3566\framework\web\filters\CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#24 Z:\yii-1.1.10.r3566\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#25 Z:\yii-1.1.10.r3566\framework\web\CController.php(292): CFilterChain->run()
+#26 Z:\yii-1.1.10.r3566\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#27 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(276): CController->run('')
+#28 Z:\yii-1.1.10.r3566\framework\web\CWebApplication.php(135): CWebApplication->runController('trip')
+#29 Z:\yii-1.1.10.r3566\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#30 Z:\web\tripmax\index.php(13): CApplication->run()
+#31 {main}
+REQUEST_URI=/tripmax/index.php/trip
+---

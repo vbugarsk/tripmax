@@ -127,12 +127,37 @@ class TripController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Trip');
+		$criteria=new CDbCriteria(array(
+			'condition'=>$this->showCondition(),
+			'order'=>'start DESC',
+			'with'=>'trackpointCount',
+		));
+		
+		$dataProvider=new CActiveDataProvider('Trip', array(
+			'pagination'=>array(
+				'pageSize'=>2,
+			),
+			'criteria'=>$criteria,
+		));
+		
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
 	}
+	
+	public function showCondition()
+	{
+		// Guests can only see public trips
+		// Authenticated users can see public and their own
 
+		if(Yii::app()->user->isGuest)
+			$condition='private=0';
+		else
+			$condition='private=0 OR (private=1 AND userId='.Yii::app()->user->getId().')';
+		
+		return $condition;
+	}
+	
 	/**
 	 * Manages all models.
 	 */
@@ -155,15 +180,7 @@ class TripController extends Controller
 	 */
 	public function loadModel($id)
 	{
-		// Guests can only see public trips
-		// Authenticated users can see public and their own private trips
-		
-		if(Yii::app()->user->isGuest)
-			$condition='private=0';
-		else
-			$condition='private=0 OR (private=1 AND userId='.Yii::app()->user->getId().')';
-		
-		$model=Trip::model()->findByPk($id, $condition);
+		$model=Trip::model()->findByPk($id, $this->showCondition());
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;

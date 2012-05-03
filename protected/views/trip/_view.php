@@ -12,10 +12,16 @@
 	<?php echo CHtml::encode($data->title); ?>
 	<br />
 
+	<div class="content">
 	<b><?php echo CHtml::encode($data->getAttributeLabel('description')); ?>:</b>
-	<?php echo CHtml::encode($data->description); ?>
+	<?php
+		$this->beginWidget('CMarkdown', array('purifyOutput'=>true));
+		echo $data->description;
+		$this->endWidget();
+	?>
+	</div>
 	<br />
-
+	
 	<b><?php echo CHtml::encode($data->getAttributeLabel('private')); ?>:</b>
 	<?php echo CHtml::encode($data->private); ?>
 	<br />
@@ -28,6 +34,10 @@
 	<?php echo CHtml::encode($data->finish); ?>
 	<br />
 
+	<b><?php echo CHtml::encode('Points'); ?>:</b>
+	<?php echo CHtml::encode($data->trackpointCount); ?>
+	<br />
+	
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('created')); ?>:</b>
 	<?php echo CHtml::encode($data->created); ?>

@@ -94,6 +94,11 @@ class Trip extends CActiveRecord
 		else
 			return false;
 	}
+	
+	public function trackPoints()
+	{
+		return $this->trackpointsCount;
+	}
 
 	/**
 	 * @return array customized attribute labels (name=>label)

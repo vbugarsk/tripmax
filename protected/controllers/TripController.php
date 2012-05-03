@@ -134,7 +134,7 @@ class TripController extends Controller
 		));
 		
 		if(isset($_GET['author']))
-			$criteria->addSearchCondition('authors',$_GET['author']);
+			$criteria->addSearchCondition('userId',$_GET['author']);
 		
 		$dataProvider=new CActiveDataProvider('Trip', array(
 			'pagination'=>array(

@@ -5,7 +5,7 @@ body
 	color: #333;
 	/*font: normal 10pt Arial,Helvetica,sans-serif;*/
 	font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
-	font-size:9pt;
+	font-size:11px;
 	background: #EFEFEF;
 }
 
@@ -38,7 +38,7 @@ body
 {
 	padding: 10px;
 	margin: 10px 20px;
-	font-size: 0.8em;
+	font-size: 10px;
 	text-align: center;
 	border-top: 1px solid #C9E0ED;
 }
@@ -69,7 +69,6 @@ body
 {
 	color:#ffffff;
 	background-color:transparent;
-	font-size:12px;
 	font-weight:bold;
 	text-decoration:none;
 	padding:5px 8px;
@@ -84,7 +83,7 @@ body
 
 div.flash-error, div.flash-notice, div.flash-success
 {
-	padding:.8em;
+	padding:10px;
 	margin-bottom:1em;
 	border:2px solid #ddd;
 }
@@ -139,7 +138,6 @@ div.view
 
 div.breadcrumbs
 {
-	font-size: 0.9em;
 	padding: 5px 20px;
 }
 
@@ -157,19 +155,19 @@ div.search-form
 
 .portlet
 {
-
+	border: 1px solid #E2E2E2;
 }
 
 .portlet-decoration
 {
 	padding: 3px 8px;
-	background: #d4dae8;
-	border-left: 5px solid #3B5998;
+	background: #F2F2F2;
+	border-top: 1px solid #E2E2E2;
 }
 
 .portlet-title
 {
-	font-size: 12px;
+	font-size: 11px;
 	font-weight: bold;
 	padding: 0;
 	margin: 0;
@@ -178,10 +176,8 @@ div.search-form
 
 .portlet-content
 {
-	font-size:0.9em;
 	margin: 0 0 15px 0;
 	padding: 5px 8px;
-	background:#EFFDFF;
 }
 
 .portlet-content ul
@@ -216,8 +212,9 @@ div.search-form
 	color: #3B5998;
 	display: block;
 	padding: 2px 0 2px 8px;
-	line-height: 15px;
+	line-height: 1.28;
 	text-decoration: none;
+	font-weight: normal;
 }
 
 .operations li a:hover

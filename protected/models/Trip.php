@@ -110,7 +110,7 @@ class Trip extends CActiveRecord
 			'finish' => 'Finish',
 			'created' => 'Created',
 			'modified' => 'Modified',
-			'distanceWithUnit' => 'Distance',
+			'distanceWithUnit' => 'Total distance',
 		);
 	}
 

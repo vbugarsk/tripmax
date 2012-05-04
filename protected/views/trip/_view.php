@@ -26,6 +26,14 @@
 	<?php echo CHtml::encode($data->private); ?>
 	<br />
 
+	<b><?php echo CHtml::encode('Points'); ?>:</b>
+	<?php echo CHtml::encode($data->trackpointCount); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('distanceWithUnit')); ?>:</b>
+	<?php echo CHtml::encode($data->distanceWithUnit); ?>
+	<br />
+
 	<b><?php echo CHtml::encode($data->getAttributeLabel('start')); ?>:</b>
 	<?php echo CHtml::encode($data->start); ?>
 	<br />
@@ -33,20 +41,5 @@
 	<b><?php echo CHtml::encode($data->getAttributeLabel('finish')); ?>:</b>
 	<?php echo CHtml::encode($data->finish); ?>
 	<br />
-
-	<b><?php echo CHtml::encode('Points'); ?>:</b>
-	<?php echo CHtml::encode($data->trackpointCount); ?>
-	<br />
-	
-	<?php /*
-	<b><?php echo CHtml::encode($data->getAttributeLabel('created')); ?>:</b>
-	<?php echo CHtml::encode($data->created); ?>
-	<br />
-
-	<b><?php echo CHtml::encode($data->getAttributeLabel('modified')); ?>:</b>
-	<?php echo CHtml::encode($data->modified); ?>
-	<br />
-
-	*/ ?>
 
 </div>

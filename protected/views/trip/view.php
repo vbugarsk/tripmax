@@ -13,7 +13,10 @@ $this->menu=array(
 );
 ?>
 
-<h1>View Trip #<?php echo $model->id; ?></h1>
+<div class="portlet-decoration">
+	<div class="portlet-title"><?php echo strtoupper('TRIP '.$model->id.' : '.$model->title) ?></div>
+</div>
+<p class="quiet"> Here please find details about this trip. For editing press button on the right.</p>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
